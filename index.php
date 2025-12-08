@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
-<div class="container ">
+<!-- <div class="container ">
   
   <div class="jumbotron">
     <h1 class="display-3">Hello,world!</h1> 
@@ -12,7 +12,7 @@ include 'header.php';
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </p>
   </div>
-</div>
+</div> -->
 <?php
 include 'footer.php';
 ?>
