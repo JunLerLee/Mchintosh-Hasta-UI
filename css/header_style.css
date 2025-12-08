@@ -1,0 +1,61 @@
+
+#logo
+{
+    height:50px;
+    padding-left: 40px;
+    border:none;
+}
+
+#header
+{
+    height: 40px;
+    width:97%;
+    padding-top: 55px;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.head_button
+{
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.head_button:hover
+{
+    background-color: #CB3737;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 17px;
+}
+
+#menu 
+{
+    display: flex;
+    gap: 60px;
+}
+
+#profile
+{
+    display:flex;
+    align-items: center;
+    gap:10px;
+    padding-right: 10px;
+}
+
+#pfp
+{
+    height: 60px;
+}
+#username
+{
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color:#CB3737;
+}
