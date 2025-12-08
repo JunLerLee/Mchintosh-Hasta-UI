@@ -1,8 +1,8 @@
 
 #logo
 {
-    height:50px;
-    padding-left: 40px;
+    height:3.5vw;
+    padding-left: 2vw;
     border:none;
 }
 
@@ -10,10 +10,12 @@
 {
     height: 40px;
     width:97%;
-    padding-top: 55px;
+    padding: 1.2vw 2vw;
     display: flex;
     align-items: center; 
     justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .head_button
@@ -21,7 +23,7 @@
     font-family: Arial, sans-serif;
     background-color: transparent;
     border: none;
-    font-size: 17px;
+    font-size: clamp(14px, 1.2vw, 18px);
     cursor: pointer;
 }
 
@@ -31,31 +33,32 @@
     padding: 5px 10px;
     border-radius: 20px;
     color: white;
-    font-size: 17px;
 }
 
 #menu 
 {
     display: flex;
-    gap: 60px;
+    gap: clamp(20px, 4vw, 60px);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #profile
 {
     display:flex;
     align-items: center;
-    gap:10px;
-    padding-right: 10px;
+    gap:0.7vw;
+    padding-right: 1vw;
 }
 
 #pfp
 {
-    height: 60px;
+    height:  clamp(40px, 4vw, 60px);
 }
 #username
 {
     font-family: Arial, sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: clamp(14px, 1.3vw, 18px);
     color:#CB3737;
 }
