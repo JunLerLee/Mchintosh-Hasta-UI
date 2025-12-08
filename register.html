@@ -4,78 +4,80 @@
   <title>Hasta Travel & Tour</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/register.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+
 <div class="container ">
-<form method="POST" action="registerprocess.php">
-  <fieldset>
-    <legend>Registration Form</legend>
+  <div class="register">
+    <form method="POST" action="registerprocess.php">
+      <fieldset>
+        <legend>Registration Form</legend>
 
-    <div>
-      <label for="exampleInputPassword1" class="form-label mt-4">Full Name</label>
-      <input type="text" name="fname" class="form-control" id="exampleInputPassword1" placeholder="Please Enter Your Full Name" autocomplete="off" required>
-    </div>
+        <div>
+          <label for="exampleInputPassword1" class="form-label mt-4">Full Name</label>
+          <input type="text" name="fname" class="form-control" id="exampleInputPassword1" placeholder="Please Enter Your Full Name" autocomplete="off" required>
+        </div>
 
-    <div>
-      <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-      <input type="password" name="fpwd" class="form-control" id="exampleInputPassword1" placeholder="Please Enter Your Password" autocomplete="off" required>
-    </div>
+        <div>
+          <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+          <input type="password" name="fpwd" class="form-control" id="exampleInputPassword1" placeholder="Please Enter Your Password" autocomplete="off" required>
+        </div>
 
-    <div>
-      <label for="exampleInputEmail1" class="form-label mt-4">Email Address</label>
-      <input type="email" name="femail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Please Enter Your Email Address" required>
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
+        <div>
+          <label for="exampleInputEmail1" class="form-label mt-4">Email Address</label>
+          <input type="email" name="femail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Please Enter Your Email Address" required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
 
-    <div>
-      <label for="exampleSelect1" class="form-label mt-4">Operator</label>
-      <select class="form-select" name="foperator" id="exampleSelect1">
-        <option>07</option>
-        <option>011</option>
-        <option>012</option>
-        <option>013</option>
-        <option>016</option>
-        <option>017</option>
-        <option>019</option>
-      </select>
-    </div>
+        <div>
+          <label for="exampleSelect1" class="form-label mt-4">Operator</label>
+          <select class="form-select" name="foperator" id="exampleSelect1">
+            <option>07</option>
+            <option>011</option>
+            <option>012</option>
+            <option>013</option>
+            <option>016</option>
+            <option>017</option>
+            <option>019</option>
+          </select>
+        </div>
 
-    <div>
-      <label for="exampleInputPassword1" class="form-label mt-4">Phone number without (-)</label>
-      <input type="text" name="fphone" class="form-control" id="exampleInputPassword1" placeholder="eg.59344314" autocomplete="off" required>
-    </div>
+        <div>
+          <label for="exampleInputPassword1" class="form-label mt-4">Phone number without (-)</label>
+          <input type="text" name="fphone" class="form-control" id="exampleInputPassword1" placeholder="eg.59344314" autocomplete="off" required>
+        </div>
 
-    <div>
-      <label for="exampleSelect1" class="form-label mt-4">Gender</label>
-      <select class="form-select" name="fgender" id="exampleSelect1">
-        <option>Male</option>
-        <option>Female</option>
-      </select>
-    </div>
+        <div>
+          <label for="exampleSelect1" class="form-label mt-4">Gender</label>
+          <select class="form-select" name="fgender" id="exampleSelect1">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
 
-    <div>
-      <label for="exampleSelect1" class="form-label mt-4">Programme</label>
-      <select class="form-select" name="fprog" id="exampleSelect1">
-        <option>SECRH</option>
-        <option>SECAH</option>
-        <option>SECPH</option>
-        <option>SECBH</option>
-        <option>SECJH</option>
-      </select>
-    </div>
+        <div>
+          <label for="exampleSelect1" class="form-label mt-4">Programme</label>
+          <select class="form-select" name="fprog" id="exampleSelect1">
+            <option>SECRH</option>
+            <option>SECAH</option>
+            <option>SECPH</option>
+            <option>SECBH</option>
+            <option>SECJH</option>
+          </select>
+        </div>
 
-    <div>
-      <label for="exampleSelect1" class="form-label mt-4">Residential College</label>
-      
-    </div> <br><br>
+        <div>
+          <label for="exampleSelect1" class="form-label mt-4">Residential College</label>
+          
+        </div> <br><br>
 
-    <button type="submit" class="btn btn-primary">Register</button>
-    <button type="reset" class="btn btn-warning">Clear Input</button><br><br><br><br><br><br>
-  </fieldset>
-</form>
-
+        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="reset" class="btn btn-warning">Clear Input</button>
+      </fieldset>
+    </form>
+  </div>
 </div>
 
 </body>
