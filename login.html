@@ -270,11 +270,7 @@
                 </form>
                 
                 <div class="signup-link">
-                    Don't have an account? <a href="#">Sign up now</a>
-                </div>
-                
-                <div class="divider">
-                    <span>Or login with</span>
+                    Don't have an account? <a href="register.html">Sign up now</a>
                 </div>
             </div>
         </div>
@@ -342,14 +338,6 @@
                 alert('Please enter your username first, then click "Forgot password"');
                 document.getElementById('username').focus();
             }
-        });
-        
-        // Sign up link
-        document.querySelector('.signup-link a').addEventListener('click', function(event) {
-            event.preventDefault();
-            alert('Redirecting to sign up page...');
-            // In a real application, you would redirect to a registration page
-            // window.location.href = '/signup';
         });
         
     </script>
