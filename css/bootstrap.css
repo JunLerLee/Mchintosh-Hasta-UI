@@ -373,7 +373,8 @@ pre,
 code,
 kbd,
 samp {
-  font-family: var(--bs-font-monospace);
+  /*font-family: var(--bs-font-monospace);*/
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1em;
 }
 
