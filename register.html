@@ -8,77 +8,214 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+<style>
+        /* --- RESET: Cleaning up the browser's default mess --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<div class="container ">
-  <div class="register">
-    <form method="POST" action="registerprocess.php">
-      <fieldset>
-        <legend>Registration Form</legend>
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh; /* 100% of the viewport height */
+            background-color: #f0f2f5;
+        }
 
-        <div>
-          <label for="exampleInputPassword1" class="form-label mt-4">Full Name</label>
-          <input type="text" name="fname" class="form-control" id="exampleInputPassword1" placeholder="Please Enter Your Full Name" autocomplete="off" required>
+        /* --- LAYOUT: The Split Screen --- */
+        .container {
+            display: flex; /* This puts Left and Right side-by-side */
+            width: 100%;
+            height: 100%;
+            background: white;
+        }
+
+        /* --- LEFT SIDE: The Form --- */
+        .left-form {
+            flex: 1; /* Takes up 50% of the space initially */
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto; /* Scroll if the screen is too short */
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* --- INPUTS: Making them look neat --- */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            background-color: #f9f9f9;
+        }
+
+        /* Email "Verify" Link positioning */
+        .email-wrapper {
+            position: relative;
+        }
+        .verify-link {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-decoration: none;
+            color: #0044cc;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        /* --- UPLOAD BOXES --- */
+        .upload-box {
+            position: relative;
+            margin-bottom: 12px;
+        }
+        
+        .fake-input {
+            width: 100%;
+            height: 45px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+        }
+
+        /* The invisible button that actually does the work */
+        .real-file-input {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0; /* Invisible */
+            cursor: pointer;
+        }
+
+        .upload-icon {
+            position: absolute;
+            right: 15px;
+            top: 12px;
+            font-size: 1rem;
+            pointer-events: none;
+        }
+
+        /* --- GREEN BUTTON --- */
+        .btn-verify {
+            width: 100%;
+            padding: 15px;
+            background-color: #3f663e; /* Dark Green */
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-verify:hover {
+            background-color: #2f4d2e;
+        }
+
+        /* --- RIGHT SIDE: The Image --- */
+        .right-image {
+            flex: 1.2; /* Takes slightly more space than the form */
+            
+            /* 👇 THIS IS THE MAGIC LINE */
+            background-image: url('img/hastawelcome.png'); 
+            
+            background-size: 80%; /* Ensures it fills the whole box */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* --- MOBILE: Stack them if screen is small --- */
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .right-image { height: 250px; flex: none; }
+            .left-form { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="left-form">
+            <h1>Welcome to Hasta Travel</h1>
+            <p class="subtitle">Kindly Enter your Personal Information before Rent Your Vehicle</p>
+
+            <form>
+                <div class="input-group">
+                    <label>Email address</label>
+                    <div class="email-wrapper">
+                        <input type="email" placeholder="Enter your email">
+                        <a href="#" class="verify-link">Verify</a>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="Enter your phone number">
+                </div>
+
+                <div style="margin-top: 20px; margin-bottom: 10px;">
+                    <label>Upload Following Documents to Verify Your Information</label>
+                </div>
+
+                <div class="upload-box">
+                    <label style="font-weight:normal; font-size:0.8rem;">National Identification Card</label>
+                    <div class="fake-input"></div>
+                    <span class="upload-icon">⬆️</span>
+                    <input type="file" class="real-file-input">
+                </div>
+
+                <div class="upload-box">
+                    <label style="font-weight:normal; font-size:0.8rem;">Driver's License</label>
+                    <div class="fake-input"></div>
+                    <span class="upload-icon">⬆️</span>
+                    <input type="file" class="real-file-input">
+                </div>
+
+                <div class="upload-box">
+                    <label style="font-weight:normal; font-size:0.8rem;">Student Card</label>
+                    <div class="fake-input"></div>
+                    <span class="upload-icon">⬆️</span>
+                    <input type="file" class="real-file-input">
+                </div>
+
+                <button class="btn-verify">Verify</button>
+            </form>
         </div>
 
-        <div>
-          <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-          <input type="password" name="fpwd" class="form-control" id="exampleInputPassword1" placeholder="Please Enter Your Password" autocomplete="off" required>
-        </div>
+        <div class="right-image"></div>
 
-        <div>
-          <label for="exampleInputEmail1" class="form-label mt-4">Email Address</label>
-          <input type="email" name="femail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Please Enter Your Email Address" required>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-
-        <div>
-          <label for="exampleSelect1" class="form-label mt-4">Operator</label>
-          <select class="form-select" name="foperator" id="exampleSelect1">
-            <option>07</option>
-            <option>011</option>
-            <option>012</option>
-            <option>013</option>
-            <option>016</option>
-            <option>017</option>
-            <option>019</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="exampleInputPassword1" class="form-label mt-4">Phone number without (-)</label>
-          <input type="text" name="fphone" class="form-control" id="exampleInputPassword1" placeholder="eg.59344314" autocomplete="off" required>
-        </div>
-
-        <div>
-          <label for="exampleSelect1" class="form-label mt-4">Gender</label>
-          <select class="form-select" name="fgender" id="exampleSelect1">
-            <option>Male</option>
-            <option>Female</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="exampleSelect1" class="form-label mt-4">Programme</label>
-          <select class="form-select" name="fprog" id="exampleSelect1">
-            <option>SECRH</option>
-            <option>SECAH</option>
-            <option>SECPH</option>
-            <option>SECBH</option>
-            <option>SECJH</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="exampleSelect1" class="form-label mt-4">Residential College</label>
-          
-        </div> <br><br>
-
-        <button type="submit" class="btn btn-primary">Register</button>
-        <button type="reset" class="btn btn-warning">Clear Input</button>
-      </fieldset>
-    </form>
-  </div>
-</div>
+    </div>
 
 </body>
 </html>
