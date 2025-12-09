@@ -225,36 +225,7 @@
             cursor: pointer;
         }
         
-        @media (max-width: 992px) {
-            .sidebar {
-                position: fixed;
-                height: 100vh;
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-            }
-            
-            .sidebar.active {
-                transform: translateX(0);
-            }
-            
-            .hamburger {
-                display: block;
-                position: fixed;
-                top: 20px;
-                left: 20px;
-                z-index: 99;
-                color: #2d3748;
-                background-color: white;
-                width: 50px;
-                height: 50px;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-            
-            .content-area {
-                padding-top: 80px;
-            }
-        }
+        
         
         .menu-toggle {
             display: flex;
@@ -351,39 +322,6 @@
     
    
 
-    <script>
-        // Toggle sidebar on mobile
-        const hamburger = document.getElementById('hamburger');
-        const sidebar = document.getElementById('sidebar');
-        const menuToggle = document.getElementById('menu-toggle');
-        
-        hamburger.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
-        
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-        });
-        
-        // Set active menu item on click
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                navLinks.forEach(item => item.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Update page title based on selected menu
-                const pageTitle = document.querySelector('.page-title');
-                const navText = this.querySelector('.nav-text').textContent;
-                pageTitle.textContent = navText;
-                
-                // Close sidebar on mobile after selection
-                if (window.innerWidth < 992) {
-                    sidebar.classList.remove('active');
-                }
-            });
-        });
-    </script>
+   
 </body>
 </html>
